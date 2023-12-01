@@ -5,6 +5,11 @@
 
 chromium="/usr/share/chromium/extensions"
 chrome="/usr/share/google-chrome/extensions"
+brave="/opt/brave.com/brave/extensions"
+
+make_ext_dir(){
+  mkdir -p $this_browser
+}
 
 install_chrome_extension () {
   preferences_dir_path="${this_browser}"
@@ -24,6 +29,7 @@ test_ext(){
 }
 
 my_extensions(){
+  make_ext_dir
   install_chrome_extension "nmidkjogcjnnlfimjcedenagjfacpobb" "freststart"
   install_chrome_extension "nngceckbapebfimnlniiiahkandclblb" "bitwarden"
   install_chrome_extension "cjpalhdlnbpafiamejdnhcphjbkeiagm" "ublock origin"
@@ -35,6 +41,8 @@ main(){
   this_browser=$chrome
   my_extensions
   this_browser=$chromium
+  my_extensions
+  this_browser=$brave
   my_extensions
 }
 
