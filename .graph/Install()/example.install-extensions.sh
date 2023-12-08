@@ -5,6 +5,7 @@
 
 chromium="/usr/share/chromium/extensions"
 chrome="/usr/share/google-chrome/extensions"
+chromium_snap="/home/me/snap/chromium/common/chromium/Default/Extensions"
 brave="/opt/brave.com/brave/extensions"
 
 make_ext_dir(){
@@ -39,6 +40,8 @@ my_extensions(){
 
 main(){
   this_browser=$chrome
+  my_extensions
+  this_browser=$chromium_snap
   my_extensions
   this_browser=$chromium
   my_extensions
